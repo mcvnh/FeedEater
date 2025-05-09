@@ -1,4 +1,4 @@
-import { tables, useDrizzle } from "../utils/drizzle"
+import { tables, useDrizzle, type Feed } from "../utils/drizzle"
 
 export default defineTask({
   meta: {
@@ -7,23 +7,18 @@ export default defineTask({
   },
   async run() {
     console.log('Running DB seed task...')
-    const users = [
+    const feeds: Feed[] = [
       {
-        name: 'John Doe',
-        email: 'john@example.com',
-        password: 'password123',
-        avatar: 'https://example.com/avatar/john.png',
-        createdAt: new Date()
+        name: 'vnexpress',
+        url: 'https://vnexpress.net/rss/tin-moi-nhat.rss',
       },
       {
-        name: 'Jane Doe',
-        email: 'jane@example.com',
-        password: 'password123',
-        avatar: 'https://example.com/avatar/jane.png',
-        createdAt: new Date()
+        name: 'tinhte',
+        url: 'https://tinhte.vn/rss',
       }
     ]
-    await useDrizzle().insert(tables.users).values(users)
+
+    await useDrizzle().insert(tables.feeds).values(feeds).execute()
     return { result: 'success' }
   }
 })
