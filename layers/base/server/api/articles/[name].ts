@@ -1,5 +1,5 @@
 import { useDrizzle } from '#imports';
-import { tables } from '../../../../database/server/utils/drizzle';
+import { tables } from '../../utils/drizzle';
 import { eq } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {

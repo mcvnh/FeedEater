@@ -1,4 +1,4 @@
-import { tables } from './../../../database/server/utils/drizzle';
+import { tables } from '../utils/drizzle';
 import { useDrizzle } from '#imports'
 
 export const FEEDS = [
