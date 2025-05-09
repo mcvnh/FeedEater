@@ -9,7 +9,7 @@ const { data: feeds } = await useFetch('/api/feeds')
     <UInput
       v-model="search"
       leading-icon="i-lucide:search"
-      placeholder="Article name or description..."
+      placeholder="article name or description..."
       class="mb-4"
 
     >
@@ -25,7 +25,7 @@ const { data: feeds } = await useFetch('/api/feeds')
       <li v-for="feed in feeds" :key="feed.name" class="border-b border-gray-200 py-4 last:border-0">
         <div>
           <div class="font-bold text-sm leading-[160%]">
-            <NuxtLink :to="`/feed/${feed.name}`" class="text-blue-500 hover:underline">
+            <NuxtLink :to="`/feed/${feed.name}`" class="hover:underline">
               {{ feed.name }}
             </NuxtLink>
           </div>
