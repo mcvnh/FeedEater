@@ -22,6 +22,9 @@ export default defineNuxtConfig({
     experimental: {
       openAPI: true,
       tasks: true
+    },
+    scheduledTasks: {
+      '0 */1 * * *': ['articles:update'],
     }
   },
 

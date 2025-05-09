@@ -1,13 +1,8 @@
-import { useArticles } from '../../../composables/useArticles';
+import { useDrizzle } from '#imports';
+import { tables } from '../../../../database/server/utils/drizzle';
 
 export default defineEventHandler(async () => {
-  const vnexpress = await useArticles('vnexpress')
-  const tinhte = await useArticles('tinhte')
-
-  return [
-    ...vnexpress,
-    ...tinhte,
-  ].sort((a, b) => {
-    return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
-  })
+  await runTask('articles:update')
+  const articles = await useDrizzle().select().from(tables.articles).limit(50).all()
+  return articles
 })
