@@ -6,16 +6,16 @@ export const feeds = sqliteTable('feeds', {
   name: text('name').notNull(),
   url: text('url').notNull().unique(),
   lastSyncAt: integer('last_sync_at', { mode: 'timestamp' }),
-  createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`now()`),
-  updatedAt: integer('updated_at', { mode: 'timestamp' }).default(sql`now()`).$onUpdate(() => new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(current_timestamp)`),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull().default(sql`(current_timestamp)`).$onUpdate(() => new Date()),
 })
 
 
 export const tags = sqliteTable('tags', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   name: text('name').notNull(),
-  createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`now()`),
-  updatedAt: integer('created_at', { mode: 'timestamp' }).default(sql`now()`).$onUpdate(() => new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(current_timestamp)`),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull().default(sql`(current_timestamp)`).$onUpdate(() => new Date()),
 })
 
 export const feedsTags = sqliteTable('feeds_tags', {
@@ -28,8 +28,8 @@ export const feedsTags = sqliteTable('feeds_tags', {
     onDelete: 'cascade',
     onUpdate: 'cascade',
   }),
-  createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`now()`),
-  updatedAt: integer('created_at', { mode: 'timestamp' }).default(sql`now()`).$onUpdate(() => new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(current_timestamp)`),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull().default(sql`(current_timestamp)`).$onUpdate(() => new Date()),
 })
 
 export const articles = sqliteTable('articles', {
@@ -46,6 +46,6 @@ export const articles = sqliteTable('articles', {
       onDelete: 'cascade',
       onUpdate: 'cascade',
     }),
-  createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`now()`),
-  updatedAt: integer('updated_at', { mode: 'timestamp' }).default(sql`now()`).$onUpdate(() => new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(current_timestamp)`),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull().default(sql`(current_timestamp)`).$onUpdate(() => new Date()),
 })
