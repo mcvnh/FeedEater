@@ -16,5 +16,11 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/ui',
     '@nuxthub/core'
-  ]
+  ],
+
+  nitro: {
+    experimental: {
+      openAPI: true
+    }
+  }
 })
