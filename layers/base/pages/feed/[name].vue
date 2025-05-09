@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { data: articles } = useFetch('/api/articles')
+const route = useRoute()
+const { data: articles } = useFetch('/api/articles/' + route.params.name)
 </script>
 <template>
   <div>

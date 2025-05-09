@@ -1,18 +1,7 @@
 <script setup lang="ts">
 const search = ref<string>('')
 
-const feeds = [
-  {
-    id: '1',
-    name: 'Feed 1',
-    url: 'https://example.com/feed1.xml',
-  },
-  {
-    id: '2',
-    name: 'Feed 2',
-    url: 'https://example.com/feed2.xml',
-  },
-]
+const { data: feeds } = await useFetch('/api/feeds')
 </script>
 
 <template>
@@ -33,9 +22,13 @@ const feeds = [
     </UInput>
 
     <ul>
-      <li v-for="feed in feeds" :key="feed.id" class="border-b border-gray-200 py-4 last:border-0">
+      <li v-for="feed in feeds" :key="feed.name" class="border-b border-gray-200 py-4 last:border-0">
         <div>
-          <div class="font-bold text-sm leading-[160%]">{{ feed.name }}</div>
+          <div class="font-bold text-sm leading-[160%]">
+            <NuxtLink :to="`/feed/${feed.name}`" class="text-blue-500 hover:underline">
+              {{ feed.name }}
+            </NuxtLink>
+          </div>
           <div class="text-xs mt-1">{{ feed.url }}</div>
         </div>
       </li>

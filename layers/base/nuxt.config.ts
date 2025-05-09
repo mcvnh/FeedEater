@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: [
+    './layers/base/assets/font-faces.css',
     './layers/base/assets/main.css',
   ],
 

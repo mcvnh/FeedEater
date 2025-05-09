@@ -1,2 +1,8 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
+
+@theme {
+  --color-primary: #05050C;
+  --font-display: "Proxima Nova", "sans";
+  --font-sans: "Proxima Nova", "sans";
+}

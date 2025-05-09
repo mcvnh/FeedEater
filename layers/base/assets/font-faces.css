@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Light-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Regular-Italic.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Medium-Italic.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Bold-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Extrabold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/ProximaNova-Extrabold-Italic.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/ProximaNova/Proxima-Nova-Black.otf') format('opentype');
+}
