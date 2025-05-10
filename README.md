@@ -1,75 +1,38 @@
-# Nuxt Minimal Starter
+# FeedEater
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A lightweight RSS feed aggregator built with Nuxt, deployed on NuxtHub, and integrated with Cloudflare to provide a free, on-the-fly RSS reader.
 
-## Setup
+## Features
 
-Make sure to install dependencies:
+Here are the key features of the application:
 
-```bash
-# npm
-npm install
+- [ ] Support for RSS and ATOM formats
+- [ ] Compatibility with mobile screens
+- [ ] Management of feeds through a single plaintext file
+- [ ] Tag-based categorization of feeds
+- [ ] Customizable feed names and colors
+- [ ] Scheduled feed fetching
 
-# pnpm
-pnpm install
+## Limitations
 
-# yarn
-yarn install
+The following potential features are not included in this application and are not part of the planned roadmap.
 
-# bun
-bun install
-```
+- authentication or authorization built-in.
+- User management system
+- Feed management UI
 
-## Development Server
+## Low maintenance project
 
-Start the development server on `http://localhost:3000`:
+This is a low-maintenance project with a deliberately narrow scope of features and support to ensure long-term viability. I have no plans to expand this into a larger project.
 
-```bash
-# npm
-npm run dev
+Bug-related issues and PRs are welcome as long as they do not significantly broaden the project's scope.
 
-# pnpm
-pnpm dev
+Please refrain from submitting PRs for new features that expand the scope.
 
-# yarn
-yarn dev
+## Installation
 
-# bun
-bun run dev
-```
+[TBD]
 
-## Production
+## Deployment
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[TBD]
