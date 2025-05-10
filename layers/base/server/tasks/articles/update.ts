@@ -1,5 +1,5 @@
-import { useFetchFeed } from "~/layers/base/composables/useFetchFeed"
-import type { Article } from "../../utils/drizzle"
+import { useFetchFeed } from '~/layers/base/composables/useFetchFeed';
+import { tables, useDrizzle, type Article } from "../../utils/drizzle"
 
 export default defineTask({
   meta: {
@@ -29,6 +29,7 @@ export default defineTask({
         try {
           await useDrizzle().insert(tables.articles).values(article).execute()
         } catch (error) {
+          console.log('Article:', article)
           console.log('Error inserting article:', error)
         }
       }
