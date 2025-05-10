@@ -17,9 +17,9 @@ Here are the key features of the application:
 
 The following potential features are not included in this application and are not part of the planned roadmap.
 
-- authentication or authorization built-in.
-- User management system
-- Feed management UI
+- No built-in authentication or authorization
+- No user management system
+- No feed management UI
 
 ## Low maintenance project
 
