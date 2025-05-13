@@ -1,0 +1,4 @@
+- name: VNExpress
+  url: https://vnexpress.net/rss/tin-moi-nhat.rss
+- name: Tinh Te
+  url: https://tinhte.vn/rss
