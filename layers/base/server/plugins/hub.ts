@@ -6,6 +6,7 @@ export default defineNitroPlugin(() => {
   onHubReady(async () => {
     try {
       const feeds = yaml.load(fs.readFileSync('feeds.yml', 'utf8')) as {name: string, url: string}[]
+      console.log(feeds)
 
       const feedNames = feeds.map((feed) => feed.name)
       const existingFeeds = await useDrizzle().select().from(tables.feeds).all()
