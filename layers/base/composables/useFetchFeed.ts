@@ -1,4 +1,4 @@
-import RssParser from 'rss-parser'
+import { XMLParser } from "fast-xml-parser"
 
 export const useFetchFeed = async (url: string) => {
   const response = await $fetch(url, {
@@ -6,18 +6,23 @@ export const useFetchFeed = async (url: string) => {
     responseType: 'text',
   })
 
-  const rssParser = new RssParser();
-  const data = await rssParser.parseString(response as string)
+  const parser = new XMLParser({ ignoreAttributes: false })
+  const feedDetails = parser.parse(response as string)
 
-  const articles = data.items.map((item) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const feeds = feedDetails.rss.channel.item.map((item: any) => {
+    const descDom = `<root>${item.description}</root>`
+    const desc = parser.parse(descDom)
+    const description = desc['root']['#text'] ?? item.description
+
     return {
       title: item.title,
       guid: item.guid,
-      description: (item.content ?? "").replace(/<[^>]*>?/gm, ''),
+      description: description,
       link: item.link,
       pubDate: item.pubDate,
     }
   })
 
-  return articles
+  return feeds
 }
