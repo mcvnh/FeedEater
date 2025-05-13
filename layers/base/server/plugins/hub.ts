@@ -3,7 +3,7 @@ import fs from 'fs'
 import yaml from 'js-yaml'
 
 export default defineNitroPlugin(() => {
-  hubHooks.hook('bindings:ready', async () => {
+  onHubReady(async () => {
     console.log('Loading feeds from feeds.yml')
     const feeds = yaml.load(fs.readFileSync('feeds.yml', 'utf8')) as {name: string, url: string}[]
 
