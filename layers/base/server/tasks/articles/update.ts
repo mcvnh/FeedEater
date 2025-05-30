@@ -28,9 +28,8 @@ export default defineTask({
       for (const article of feedArticles) {
         try {
           await useDrizzle().insert(tables.articles).values(article).execute()
-        } catch (error) {
-          console.log('Article:', article)
-          console.log('Error inserting article:', error)
+        } catch {
+          console.log('Error inserting article:', article.title)
         }
       }
 

@@ -7,6 +7,5 @@ export const FEEDS = [
 ]
 
 export default defineEventHandler(async () => {
-  const feeds = await useDrizzle().select().from(tables.feeds).all()
-  return feeds
+  return useDrizzle().select().from(tables.feeds).all()
 })

@@ -1,7 +1,11 @@
+<script setup lang="ts">
+const route = useRoute();
+</script>
+
 <template>
   <NuxtLayout>
     <UApp>
-      <NuxtPage />
+      <NuxtPage :key="route.fullPath" />
     </UApp>
   </NuxtLayout>
 </template>
