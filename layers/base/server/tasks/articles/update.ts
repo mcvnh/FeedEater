@@ -11,6 +11,8 @@ export default defineTask({
     const feeds = await useDrizzle().select().from(tables.feeds).all()
 
     for (const feed of feeds) {
+      console.log(`Updating articles for feed: ${feed.name} (${feed.url})`)
+
       const upcomingArticles = await useFetchFeed(feed.url)
 
       const feedArticles: Article[] = upcomingArticles.map((article: any) => {
@@ -29,7 +31,7 @@ export default defineTask({
         try {
           await useDrizzle().insert(tables.articles).values(article).execute()
         } catch {
-          console.log('Error inserting article:', article.title)
+          console.debug('Error inserting article:', article.title)
         }
       }
 

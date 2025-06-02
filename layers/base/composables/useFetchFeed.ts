@@ -15,9 +15,11 @@ export const useFetchFeed = async (url: string) => {
     const desc = parser.parse(descDom)
     const description = desc['root']['#text'] ?? item.description
 
+    const guid = typeof item.guid === 'object' ? item.guid['#text'] : item.guid
+
     return {
       title: item.title,
-      guid: item.guid,
+      guid,
       description: description,
       link: item.link,
       pubDate: item.pubDate,

@@ -1,4 +1,4 @@
-- name: vnexpress
-  url: https://vnexpress.net/rss/tin-moi-nhat.rss
-- name: tinhte
-  url: https://tinhte.vn/rss
+- name: vuejs-news
+  url: https://news.vuejs.org/feed.xml
+- name: frontendmaster
+  url: https://frontendmasters.com/blog/feed/

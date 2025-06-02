@@ -10,7 +10,6 @@ export default defineTask({
   async run() {
     try {
       const feeds = yaml.load(fs.readFileSync('feeds.yml', 'utf8')) as {name: string, url: string}[]
-      console.log(feeds)
 
       const feedNames = feeds.map((feed) => feed.name)
       const existingFeeds = await useDrizzle().select().from(tables.feeds).all()
@@ -22,6 +21,7 @@ export default defineTask({
 
       const allNames = existingFeeds.map((feed) => feed.name)
       const newFeeds = feeds.filter((feed) => !allNames.includes(feed.name))
+
       if (newFeeds.length > 0) {
         const insertFeeds = newFeeds.map((feed) => ({
           name: feed.name,

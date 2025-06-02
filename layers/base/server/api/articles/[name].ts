@@ -28,19 +28,20 @@ export default defineEventHandler(async (event) => {
     .all()
 
 
-  const totalCount = !search
-  ? await useDrizzle().select({ count: sql<number>`count(id)`}).from(tables.articles).where(eq(tables.articles.feedId, feed!.id))
-  : await useDrizzle().select({ count: sql<number>`count(id)`}).from(tables.articles).where(
-    and(
-      eq(tables.articles.feedId, feed!.id),
-      or(
-        like(tables.articles.title, `%${search.toLowerCase()}%`),
-        like(tables.articles.description, `%${search.toLowerCase()}%`)
+  const totalCount = await useDrizzle()
+    .select({ count: sql<number>`count(id)`})
+    .from(tables.articles)
+    .where(
+      and(
+        eq(tables.articles.feedId, feed!.id),
+        or(
+          like(tables.articles.title, `%${search.toLowerCase()}%`),
+          like(tables.articles.description, `%${search.toLowerCase()}%`)
+        )
       )
     )
-  ).all();
+    .all();
 
-  console.log(search)
   const totalPages = Math.ceil(totalCount[0].count / pageSize);
 
   return {
